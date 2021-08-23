@@ -1,0 +1,21 @@
+config:
+  target: "http://localhost:3000"
+  timeout: 5
+  phases:
+    - duration: 20
+      arrivalRate: 1
+      # arrivalCount: 2
+      # maxVusers: 2
+  engines:
+    moleculer: {}
+  moleculer:
+    config: "moleculer.config.js"
+    services: "services/**/*.service.js"
+scenarios:
+  - name: run
+    engine: moleculer
+    flow:
+      - spawn:
+          options:
+      - think: 5
+      - stop: {}
